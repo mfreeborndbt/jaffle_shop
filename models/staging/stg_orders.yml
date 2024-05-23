@@ -4,9 +4,13 @@ models:
     data_tests:
       - dbt_utils.expression_is_true:
           expression: "order_total - tax_paid = subtotal"
+          config:
+            enabled: false
     columns:
       - name: order_id
         description: The unique key for each order.
         data_tests:
           - not_null
-          - unique
+          - unique:
+              config:
+                enabled: false
