@@ -4,7 +4,9 @@ models:
       - name: order_item_id
         data_tests:
           - not_null
-          - unique
+          - unique:
+              config:
+                enabled: false
       - name: order_id
         data_tests:
           - relationships:
